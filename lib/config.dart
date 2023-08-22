@@ -1,8 +1,8 @@
 class Config {
   static const String appName = "Shopping App";
-  //static const String apiURL = '10.0.0.7:4000'; //PROD_URL
-  static const String apiURL = '127.0.0.1:27017'; // db: 'mongodb://127.0.0.1:27017/mydatabase'
-  static const loginAPI = "/users/login";
-  static const registerAPI = "/users/register";
-  static const userProfileAPI = "/users/user-Profile";
+  static const String apiURL = "127.0.0.1:4000"; // Replace with the correct protocol and IP
+  static const String loginAPI = "/users/login";
+  static const String registerAPI = "/users/register";
+  static const String userProfileAPI = "/users/user-Profile";
 }
+

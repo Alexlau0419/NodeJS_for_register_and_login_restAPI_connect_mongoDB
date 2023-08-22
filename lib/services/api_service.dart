@@ -15,7 +15,7 @@ class APIService {
 
   static Future<bool> login(
     LoginRequestModel model,
-  ) async {
+  ) async { 
     print('AAAAAAAAAAAAAAAAAA');
     Map<String, String> requestHeaders = {
       'Content-Type': 'application/json',
@@ -33,6 +33,7 @@ class APIService {
     );
 
     if (response.statusCode == 200) {
+      print('EEEEEEEEEEEEEEEEEEE');
       await SharedService.setLoginDetails(
         loginResponseJson(
           response.body,
@@ -49,7 +50,7 @@ class APIService {
   static Future<RegisterResponseModel> register(
     RegisterRequestModel model,
   ) async {
-    print('DDDDDDDDDDDDDDDDDDD');
+   // print('DDDDDDDDDDDDDDDDDDD');
     Map<String, String> requestHeaders = {
       'Content-Type': 'application/json',
     };
@@ -64,7 +65,7 @@ class APIService {
       headers: requestHeaders,
       body: jsonEncode(model.toJson()),
     );
-      print('EEEEEEEEEEEEEEEEE');
+    //  print('EEEEEEEEEEEEEEEEE');
     return registerResponseJson(
       response.body,
     );
@@ -72,7 +73,7 @@ class APIService {
 
   static Future<String> getUserProfile() async {
     var loginDetails = await SharedService.loginDetails();
-    print('FFFFFFFFFFFFFFFFFF');
+   // print('FFFFFFFFFFFFFFFFFF');
     Map<String, String> requestHeaders = {
       'Content-Type': 'application/json',
       'Authorization': 'Basic ${loginDetails!.data.token}'
@@ -86,10 +87,10 @@ class APIService {
     );
 
     if (response.statusCode == 200) {
-      print('GGGGGGGGGGGGGGGGG');
+     // print('GGGGGGGGGGGGGGGGG');
       return response.body;
     } else {
-      print('HHHHHHHHHHHHHHHHH');
+     // print('HHHHHHHHHHHHHHHHH');
       return "";
     }
   }

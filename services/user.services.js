@@ -68,9 +68,9 @@ async function createNewOTP(params, callback) {
 
   var otpMessage = `Dear Customer, ${otp} is the One Time Password ( OTP ) for your login.`;
 
- // msg91.send(`+60${params.phone}`, otpMessage, function (err, response) {
- //   console.log(response);
-  //});
+  msg91.send(`+91${params.phone}`, otpMessage, function (err, response) {
+    console.log(response);
+  });
 
   return callback(null, fullHash);
 }
